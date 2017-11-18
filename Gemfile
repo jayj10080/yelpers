@@ -60,3 +60,4 @@ source 'https://rails-assets.org' do
 end
 
 gem 'will_paginate', '> 3.0'
+gem 'simple_form'
