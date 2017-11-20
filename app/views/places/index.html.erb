@@ -2,19 +2,20 @@
 
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
-  <h1><%= place.name %></h1>
-  <i><%= place.address %></i><br /><br />
-  <p><%= place.description %></p><br />
+    <h1><%= link_to place.name, place_path(place) %></h1><br />
+    <h1><%= place.name %></h1>
+    <i><%= place.address %></i><br /><br />
+    <p><%= place.description %></p><br />
 
-  <% if place.user.present? %>
-    <small><%= place.user.email %></small>
-  <% end %>
+    <% if place.user.present? %>
+      <small><%= place.user.email %></small>
+    <% end %>
   </div>
 
 <% end %>
 
 <div class="pagCenter">
-<%= will_paginate @places, previous_label: h("<"), next_label: h(">") %>
+  <%= will_paginate @places, previous_label: h("<"), next_label: h(">") %>
 </div>
 
 
