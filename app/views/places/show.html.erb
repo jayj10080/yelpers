@@ -7,15 +7,12 @@
   <% if @place.latitude.present? && @place.longitude.present? %>
   
   <script>
-
     function initMap() {
       var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
-
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
         center: myLatLng
       });
-
       var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
@@ -44,6 +41,8 @@
 </div>
 
 <div class="clear"></div>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -78,6 +77,7 @@
   <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
     Add a comment
   </button>
+
 </div>
 
 <div class="clear"></div>
@@ -95,3 +95,25 @@
 </div>
 <% end %>
 </div>
+
+
+
+<div class="clear"></div>
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+  <%= f.input :picture %>
+  <%= f.input :caption %>
+  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+<% end %>
+
+<div class="booyah-box">
+<h1>Photos</h1>
+<% @place.photos.each do |photo| %>
+  <div>
+    
+      <%= image_tag photo.picture %>
+        <%= photo.caption %>
+      
+  </div>
+<% end %>
+</div>
+

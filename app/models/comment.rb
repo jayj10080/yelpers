@@ -14,3 +14,4 @@ class Comment < ApplicationRecord
     RATINGS.invert[self.rating]
   end
 end
+
