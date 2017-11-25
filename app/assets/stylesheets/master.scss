@@ -12,6 +12,8 @@
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 20px;
+  
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -117,7 +119,8 @@ body {
 blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
+  /*margin: 1.5em 10px;*/
+  margin-top: 20px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
@@ -134,6 +137,86 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
+
+.picButton {
+  margin-right: 5px;
+}
+
+.picText {
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+/*.thumbnail img {
+    width: 100%;
+    
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+#delete-form {
+    display: inline;
+}
+
+.samesizepic img {
+    /*height: 190px;*/
+    /*width: 270px;
+  height: 270px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+*/
+
+
+
+
+/*.style_image {*/
+    /*width: 270px;  you can use % 
+    height: auto;
+
+  width: 270px;
+  height: 270px;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+
+}
+
+#commentMargin {
+  margin: 20px, 0px, 0px, 0px;
+}
+
+p {
+  margin: 0px;
+}*/
+
+
+
+div.thumbnail {
+  width: 270px;
+  height: 270px;
+  overflow:hidden;
+}
+div.thumbnail img {
+  height: 100%;
+  min-width: 100%;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+}
+
+
 
 
 
