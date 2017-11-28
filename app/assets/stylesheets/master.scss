@@ -237,6 +237,16 @@ div.thumbnail img {
   box-shadow: 0px 3px 8px #2a2a2a;
 }
 
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: block;
+ }
+
+ .noMargin {
+  margin-left: 50px;
+ }
+
 
 
 
