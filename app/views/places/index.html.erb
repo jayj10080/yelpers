@@ -6,21 +6,21 @@
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
-      <%= image_tag 'slider1.jpg', class: 'd-block img-fluid' %>
+      <%= image_tag 'slider4.jpg', class: 'd-block img-fluid' %>
       <div class="carousel-caption d-none d-md-block">
         <h3>Find the best restaurants in your town</h3>
       </div>
     </div>
     <div class="carousel-item">
-      <%= image_tag 'slider2.jpg', class: 'd-block img-fluid' %>
+      <%= image_tag 'slider5.jpg', class: 'd-block img-fluid' %>
       <div class="carousel-caption d-none d-md-block">
-        <h3>So much food, so little time!</h3>
+        <h3>Your local favorites at your fingertips</h3>
       </div>
     </div>
     <div class="carousel-item">
-      <%= image_tag 'slider3.jpg', class: 'd-block img-fluid' %>
+      <%= image_tag 'slider6.jpg', class: 'd-block img-fluid' %>
       <div class="carousel-caption d-none d-md-block">
-        <h3>Oh me so hungry...</h3>
+        <h3>Get the most reviews for your local restaurants</h3>
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
             <%= image_tag place.photos.last.picture %> 
           <% else %>
             
-              <%= image_tag Dir.new(Rails.root.to_s + "/app/assets/images/randomImages").to_a.select{|f|    f.downcase.match(/\.jpg|\.jpeg|\.png/) }.sample %>
+             <%= image_tag "randomImages/#{rand(10)}.png" %>
             
           <% end %>
         </div>

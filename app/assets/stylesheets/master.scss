@@ -120,7 +120,7 @@ body {
 blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
-  /*margin: 1.5em 10px;*/
+  margin: 1.5em 10px;
   margin-top: 20px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
@@ -203,7 +203,7 @@ p {
 }*/
 
 
-
+/*For the images in the show and index page to display inline*/
 div.thumbnail {
   width: 270px;
   height: 270px;
@@ -220,6 +220,8 @@ div.thumbnail img {
 .carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
   max-height: 550px;
   width: 100%;
+  /*This maintains the ratio width heighth but creates white space around image*/
+  /*object-fit: contain;*/
 }
 
 .carousel-caption {
@@ -242,6 +244,22 @@ div.thumbnail img {
 .carousel-item-prev {
   display: block;
  }
+
+
+/*This stops text from floating on top of picture when shrinking screen size on index add weird arrow thingies*/ 
+ /*.divindex {
+    resize: both;
+    overflow: auto;
+}*/
+
+.invertedColor {
+  background-color: black;
+  color: white;
+}
+
+
+
+
 
  
 
