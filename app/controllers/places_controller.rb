@@ -4,6 +4,8 @@ class PlacesController < ApplicationController
 def index
   # @places = Place.all
   @places = Place.order("name").page(params[:page]).per_page(5)
+  # @images = Dir.glob("app/assets/images/randomImages/*.jpg")
+  # @random = @images.order("RANDOM()").first
 end
 
 def new

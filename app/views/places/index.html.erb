@@ -45,7 +45,9 @@
           <% if place.photos.present? %>
             <%= image_tag place.photos.last.picture %> 
           <% else %>
-            <%= image_tag 'defaultimage.jpg' %>
+            
+              <%= image_tag Dir.new(Rails.root.to_s + "/app/assets/images/randomImages").to_a.select{|f|    f.downcase.match(/\.jpg|\.jpeg|\.png/) }.sample %>
+            
           <% end %>
         </div>
       </div>
@@ -64,7 +66,7 @@
             <% if place.comments.last.humanized_rating.present? %>
               <b><%= place.comments.last.humanized_rating %></b> -
             <% end %>
-            <%= place.comments.last.message %>
+            <%= place.comments.last.message %>&nbsp;
             <small><%= place.comments.last.user.email %></small>
             <br />
           </blockquote>
