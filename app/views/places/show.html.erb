@@ -121,9 +121,8 @@
   </div>
 </div>
 
-
-
 <div class="clear"></div>
+
 <div class="row">
   <% @place.comments.each do |comment| %>
     <div class="col-12 col-sm-6">
@@ -140,14 +139,13 @@
 
 <hr>
 
-
 <% if @place.photos.present? %>
-<div class="col-10 offset-1">
-<h1 class="float-left">Photos</h1>
-<br />
-<br />
-<br />
-</div>
+  <div class="col-10 offset-1">
+    <h1 class="float-left">Photos</h1>
+    <br />
+    <br />
+    <br />
+  </div>
 <% end %>
 
 <div class="clear">
