@@ -62,7 +62,7 @@
         <% end %>
 
         <% if place.comments.present? %>
-          <blockquote>
+          <blockquote class="index-comment">
             <% if place.comments.last.humanized_rating.present? %>
               <b><%= place.comments.last.humanized_rating %></b> -
             <% end %>

@@ -24,12 +24,17 @@ h1, h2, h3, h4, h5, h6 {
 body {
   background: image_url('dust_scratches.png');
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  padding-top: 55px;
 }
 
 .navbar {
   background: image_url('footer_lodyas.png');
   box-shadow: 0px 1px 3px #2a2a2a;
   margin-bottom: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  top: 0;
 }
 
 .navbar-inverse .navbar-brand {
@@ -205,7 +210,8 @@ p {
 
 /*For the images in the show and index page to display inline*/
 div.thumbnail {
-  width: 270px;
+  width: 100%;
+  max-width: 270px;
   height: 270px;
   overflow:hidden;
 }
@@ -256,6 +262,30 @@ div.thumbnail img {
   background-color: black;
   color: white;
 }
+
+blockquote.index-comment {
+  padding-left: 5px;
+  margin-left: 0;
+}
+
+div.no-padding {
+  padding-left: 0;
+  margin-left: 75px;
+}
+
+div h1 a {
+  color: #7658ED;
+}
+
+@media only screen and (max-width: 479px) { 
+    button.picButton {
+    margin-top: 5px;
+  }
+}
+
+
+
+
 
 
 

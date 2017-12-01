@@ -2,12 +2,6 @@
   <div class="row">
     <div class="col-4">
       <%= image_tag 'user.png' %>
-    
-
-      
-
-
-
     </div>
 
     <div class="col-8">
@@ -21,7 +15,10 @@
 </div>
 
 <br /><br />
+
+
 <h1 class="text-center">My Comments</h1>
+<div class="col-10 offset-1"
 <br /><br />
 <div class="row">
   <% @user.comments.each do |comment| %>
@@ -37,10 +34,12 @@
     </div>
   <% end %>
 </div>
+</div>
 
 
 <div class="clear"></div>
 <br /><br />
+
 <h2 class="text-center">My Places</h2>
 <br /><br />
 

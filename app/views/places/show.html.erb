@@ -58,10 +58,11 @@
 <br />
 <br />
 <div class="clear"></div>
-<hr>
+
 
 <% if @place.comments.present? %>
 <div class="col-10 offset-1">
+  <hr>
 <h1 class="float-left">Comments</h1>
 </div>
 <% end %>
@@ -123,6 +124,7 @@
 
 <div class="clear"></div>
 
+<div class="col-10 offset-1">
 <div class="row">
   <% @place.comments.each do |comment| %>
     <div class="col-12 col-sm-6">
@@ -136,11 +138,15 @@
     </div>
   <% end %>
 </div>
+</div>
 
-<hr>
+
+
+
 
 <% if @place.photos.present? %>
   <div class="col-10 offset-1">
+    <hr>
     <h1 class="float-left">Photos</h1>
     <br />
     <br />
