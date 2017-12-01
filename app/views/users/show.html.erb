@@ -66,3 +66,24 @@
     <% end %>
   </div>
 <% end %>
+
+
+<%= simple_form_for @avatar, url: user_avatars_path(@user) do |f| %>
+  <%= f.input :avatarpic %>
+  <%= f.submit "Add a Picture", class: 'btn btn-primary' %>
+<% end %>
+
+
+<% @user.avatars.each do |avatar| %>
+     
+           <%= image_tag avatar.avatarpic %>
+        
+      
+          
+       
+    <% end %>
+  
+
+
+
+
