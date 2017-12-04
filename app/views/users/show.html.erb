@@ -2,6 +2,9 @@
   <div class="row">
     <div class="col-4">
       <%= image_tag 'user.png' %>
+      <a class="add-image" data-toggle="modal" data-target="#avatarpic">
+    Add a Pic
+  </a>
     </div>
 
     <div class="col-8">
@@ -96,8 +99,14 @@
 </div>
   
   <button type="button" class="picButton btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#avatarpic">
-    Add a Picture
+    Add a Pic
   </button>
+
+  <a class="picButton btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#avatarpic">
+    Add a Pic
+  </a>
+
+  <%= image_tag @user.avatar.avatarpic %>
 
 
 
