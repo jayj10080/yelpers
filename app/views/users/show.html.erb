@@ -1,11 +1,25 @@
 <div class="booyah-box invertedColor">
   <div class="row">
     <div class="col-4">
+      <div class="profile-image">
+      <% if @user.avatar.present? %>
+        <%= image_tag @user.avatar.avatarpic %>
+      
+
+      <% else %>
+      
+
       <%= image_tag 'user.png' %>
-      <a class="add-image" data-toggle="modal" data-target="#avatarpic">
-    Add a Pic
-  </a>
+      
+      <a href="#" class="add-image" data-toggle="modal" data-target="#avatarpic">
+    Add a Picture
+      </a>
+
+      <% end %>
+      </div>
     </div>
+
+
 
     <div class="col-8">
       <h1><%= @user.email %></h1>
@@ -28,7 +42,7 @@
     <div class="col-12 col-sm-6">
       <h2 class="text-center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
       <blockquote>
-        <% if comment.humanized_rating.present? %>
+        <% if comment.humanized_rating.present? %> 
           <b><%= comment.humanized_rating %></b> -
         <% end %>
         <%= comment.message %>&nbsp;
@@ -102,11 +116,11 @@
     Add a Pic
   </button>
 
-  <a class="picButton btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#avatarpic">
-    Add a Pic
-  </a>
+  
 
-  <%= image_tag @user.avatar.avatarpic %>
+
+
+
 
 
 
