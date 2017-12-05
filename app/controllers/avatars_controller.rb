@@ -10,6 +10,13 @@ class AvatarsController < ApplicationController
     redirect_to user_path(@user)
   end
 
+def destroy
+  @user = User.find(params[:user_id])
+  @avatar = Avatar.find(params[:id])
+  @avatar.user = @user
+  redirect_to user_path(@user)
+end
+
 private
 
 def avatar_params

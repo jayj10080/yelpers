@@ -2,20 +2,21 @@
   <div class="row">
     <div class="col-4">
       <div class="profile-image">
-      <% if @user.avatar.present? %>
-        <%= image_tag @user.avatar.avatarpic %>
-      
 
-      <% else %>
-      
 
-      <%= image_tag 'user.png' %>
-      
-      <a href="#" class="add-image" data-toggle="modal" data-target="#avatarpic">
+<% if @user.avatar.present? %>
+  <%= link_to user_avatar_path(@user), method: :delete, data: { confirm: 'Are you sure' } do %>
+  <%= image_tag @user.avatar.avatarpic %>
+<% end %>
+<% else %>
+  <%= image_tag 'user.png' %>
+  <a href="#" class="add-image" data-toggle="modal" data-target="#avatarpic">
     Add a Picture
-      </a>
-
+  </a>
       <% end %>
+
+     
+
       </div>
     </div>
 
@@ -112,6 +113,8 @@
   </div>
 </div>
   
+
+
   
 
   
