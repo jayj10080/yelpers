@@ -14,6 +14,7 @@ def destroy
   @user = User.find(params[:user_id])
   @avatar = Avatar.find(params[:id])
   @avatar.user = @user
+  @avatar.destroy
   redirect_to user_path(@user)
 end
 

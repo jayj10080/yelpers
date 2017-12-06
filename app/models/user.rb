@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :places
   has_many :comments, dependent: :destroy
-  has_one :avatar
+  has_one :avatar, dependent: :destroy
 end

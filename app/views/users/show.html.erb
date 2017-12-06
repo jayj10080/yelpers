@@ -5,7 +5,7 @@
 
 
 <% if @user.avatar.present? %>
-  <%= link_to user_avatar_path(@user), method: :delete, data: { confirm: 'Are you sure' } do %>
+  <%= link_to user_avatar_path(@user, @user.avatar), :title => "Upload New Photo", method: :delete, data: { confirm: 'Are you sure you want to change your Photo?' } do %>
   <%= image_tag @user.avatar.avatarpic %>
 <% end %>
 <% else %>
@@ -14,10 +14,7 @@
     Add a Picture
   </a>
       <% end %>
-
-     
-
-      </div>
+    </div>
     </div>
 
 
@@ -36,6 +33,10 @@
 
 
 <h1 class="text-center">My Comments</h1>
+<br />
+
+<% if (@user.comments.present?) %>
+
 <div class="col-10 offset-1"
 <br /><br />
 <div class="row">
@@ -52,14 +53,29 @@
     </div>
   <% end %>
 </div>
-</div>
+</div> 
+
+<% elsif !(@user.places.present?) && !(@user.comments.present?)  %>
+  <h5 class="text-center">Go add your first comment!</h5>
+  <% elsif (@user.places.present?) && !(@user.comments.present?) %>
+  <h5 class="text-center">Add a comment to your <%= link_to 'place!', place_path(@user.places.first), class: 'place-link' %></h5>
+  <% end %>
+
 
 
 <div class="clear"></div>
 <br /><br />
 
-<h2 class="text-center">My Places</h2>
+<hr class="col-10 offset-1">
+
+<br />
+<h1 class="text-center">My Places</h1>
 <br /><br />
+
+<% if !(@user.places.present?) %>
+  <h5 class="text-center h5-no-margin-top">Add your first <%= link_to 'place!', new_place_path, class: 'place-link' %></h5>
+  
+  <% end %>
 
 <% @user.places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
