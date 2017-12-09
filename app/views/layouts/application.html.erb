@@ -30,23 +30,44 @@
     </ul>
     <ul class="navbar-nav">
       <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to 'My Profile', user_path(current_user), class: 'nav-link' %>
+        <li class="nav-item welcome">
+          Welcome <%= current_user.email %>
         </li>
-        <li class="nav-item">
-          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-        </li>
-        <li>
-
-          
-      <% if current_user.avatar.present? %>  
-      <%= link_to image_tag(current_user.avatar.avatarpic), user_path(current_user), class: 'profile-pic' %> 
-      <% else %>
-      <%= link_to image_tag('user.png'), user_path(current_user), class: 'profile-pic' %>
-      <% end %>
+        
         
 
+
+
+
+
+
+        <li class="dropdown profile-pic">
+
+          <% if current_user.avatar.present? %>
+          <%= image_tag current_user.avatar.avatarpic, class: 'profile-pic', data: { toggle: 'dropdown' } %>
+          <% else %>
+          <%= image_tag 'user.png', class: 'profile-pic', data: { toggle: 'dropdown' } %>
+          <% end %>
+
+
+
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+          </a>
+            <ul class="dropdown-menu dropped-down">
+                <li class="nav-item">
+                  <%= link_to 'My Profile', user_path(current_user), class: 'link-color' %>
+                </li>
+                <li class="nav-item">
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'link-color' %>
         </li>
+            </ul>
+          </li>
+
+
+
+
+
       <% else %>
         <li class="nav-item">
           <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>

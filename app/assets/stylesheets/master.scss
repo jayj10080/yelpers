@@ -328,9 +328,25 @@ div.profile-image img {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    border: 2px solid #FFFFFF;
-
+    border: 2px solid #7658ED;
+    cursor: pointer;
 }
+
+.link-color {
+  color: #7658ED;
+}
+
+ul.dropped-down {
+  right: 10%;
+  left: auto;
+  padding-left: 10px;
+}
+
+li.welcome {
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0.5em 1em;
+}
+
 
 
 
