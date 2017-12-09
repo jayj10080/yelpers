@@ -3,7 +3,6 @@
     <div class="col-4">
       <div class="profile-image">
 
-
 <% if @user.avatar.present? %>
   <%= link_to user_avatar_path(@user, @user.avatar), :title => "Upload New Photo", method: :delete, data: { confirm: 'Are you sure you want to change your Photo?' } do %>
   <%= image_tag @user.avatar.avatarpic %>
@@ -17,9 +16,7 @@
     </div>
     </div>
 
-
-
-    <div class="col-8">
+<div class="col-8">
       <h1><%= @user.email %></h1>
       <h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
       <h4><%= @user.comments.count %> total comments</h4>
@@ -48,7 +45,7 @@
           <b><%= comment.humanized_rating %></b> -
         <% end %>
         <%= comment.message %>&nbsp;
-        <small><%= comment.user.email %></small>
+        <small><%= mail_to comment.user.email %></small>
       </blockquote>
     </div>
   <% end %>
@@ -60,7 +57,23 @@
   <% elsif (@user.places.present?) && !(@user.comments.present?) %>
   <h5 class="text-center">Add a comment to your <%= link_to 'place!', place_path(@user.places.first), class: 'place-link' %></h5>
   <% end %>
-
+<div class="col-10 offset-1"
+<br /><br />
+<div class="row">
+  <% @user.comments.each do |comment| %>
+    <div class="col-12 col-sm-6">
+      <h2 class="text-center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
+      <blockquote>
+        <% if comment.humanized_rating.present? %> 
+          <b><%= comment.humanized_rating %></b> -
+        <% end %>
+        <%= comment.message %>&nbsp;
+        <small><%= mail_to comment.user.email %></small>
+      </blockquote>
+    </div>
+  <% end %>
+</div>
+</div>
 
 
 <div class="clear"></div>
