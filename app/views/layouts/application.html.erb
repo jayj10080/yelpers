@@ -12,9 +12,9 @@
 
 
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+  <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> -->
   <!-- <a class="navbar-brand" href="#">Yelpers</a> -->
   <!-- The link below is the rails method, the one above is the html method -->
   <%= link_to 'Yelpers', root_path, class: 'navbar-brand' %>
@@ -30,45 +30,35 @@
     </ul>
     <ul class="navbar-nav">
       <% if user_signed_in? %>
-        <li class="nav-item welcome">
+
+      <li class="nav-item welcome">
           Welcome <%= current_user.email %>
-        </li>
+      </li>
         
-        
+      <li class="dropdown profile-pic">
 
-
-
-
-
-
-        <li class="dropdown profile-pic">
-
-          <% if current_user.avatar.present? %>
+        <% if current_user.avatar.present? %>
           <%= image_tag current_user.avatar.avatarpic, class: 'profile-pic', data: { toggle: 'dropdown' } %>
-          <% else %>
+        <% else %>
           <%= image_tag 'user.png', class: 'profile-pic', data: { toggle: 'dropdown' } %>
-          <% end %>
+        <% end %>
 
-
-
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="caret"></span>
-          </a>
-            <ul class="dropdown-menu dropped-down">
-                <li class="nav-item">
-                  <%= link_to 'My Profile', user_path(current_user), class: 'link-color' %>
-                </li>
-                <li class="nav-item">
-          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'link-color' %>
-        </li>
-            </ul>
-          </li>
-
-
-
-
+        </a>
+          <ul class="dropdown-menu dropped-down">
+            <li class="nav-item">
+              <%= link_to 'My Profile', user_path(current_user), class: 'link-color' %>
+            </li>
+            <li class="nav-item">
+               <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'link-color' %>
+            </li>
+          </ul>
+      </li>
 
       <% else %>
+
+      
         <li class="nav-item">
           <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
         </li>
