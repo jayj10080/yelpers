@@ -15,25 +15,27 @@
 
     <nav class="navbar navbar-toggleable navbar-inverse bg-inverse">
 
-      
+    <% unless user_signed_in? %>  
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <% end %>
   <!-- <a class="navbar-brand" href="#">Yelpers</a> -->
   <!-- The link below is the rails method, the one above is the html method -->
   <%= link_to 'Yelpers', root_path, class: 'navbar-brand' %>
 
+<% unless user_signed_in? %> 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-
+      <% end %>
     
     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
       <% if user_signed_in? %>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <%= link_to new_place_path, class: 'nav-link' do %>
         <i class="fa fa-plus-circle"></i>
           New Place
           <% end %>
-      </li>
+      </li> -->
       <% end %>
     </ul>
     
@@ -78,7 +80,10 @@
         </li>
       <% end %>
     </ul>
+    <% unless user_signed_in? %> 
+
   </div>
+  <% end %>
 </nav>
 
 

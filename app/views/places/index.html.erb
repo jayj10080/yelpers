@@ -5,6 +5,11 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
+
+    <div class="carousel-caption d-none d-md-block caption-button col-2 offset-5">
+      <%= link_to("ADD A NEW PLACE", new_place_path, class: "btn btn-primary different-color-button btn-lg") %>
+    </div>
+
     <div class="carousel-item active">
       <%= image_tag 'slider4.jpg', class: 'd-block img-fluid' %>
       <div class="carousel-caption d-none d-md-block">
