@@ -367,9 +367,19 @@ div.blah{
   }
 }
 
-.meow {
-  width: unset;
+div.caption {
+  width: 100%;
+  
+  background-color: purple;
+  word-wrap: break-word;
 }
+
+div.wid {
+  width: 100%;
+  max-width: 100%;
+}
+
+
 
 
 
