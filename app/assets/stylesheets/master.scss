@@ -152,62 +152,6 @@ blockquote p {
   font-size: 20px;
 }
 
-
-
-
-
-
-
-/*.thumbnail img {
-    width: 100%;
-    
-}
-
-.thumbnail {
-    padding: 0;
-}
-
-.thumbnail .caption-full {
-    padding: 9px;
-}
-
-#delete-form {
-    display: inline;
-}
-
-.samesizepic img {
-    /*height: 190px;*/
-    /*width: 270px;
-  height: 270px;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-*/
-
-
-
-
-/*.style_image {*/
-    /*width: 270px;  you can use % 
-    height: auto;
-
-  width: 270px;
-  height: 270px;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-
-}
-
-#commentMargin {
-  margin: 20px, 0px, 0px, 0px;
-}
-
-p {
-  margin: 0px;
-}*/
-
-
 /*For the images in the show and index page to display inline*/
 div.thumbnail {
   width: 100%;
@@ -423,6 +367,9 @@ div.blah{
   }
 }
 
+.meow {
+  width: unset;
+}
 
 
 
