@@ -378,9 +378,48 @@ left: 42vw;
     li.profile-pic {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 10px;
     margin-top: 15px;
     margin-right: 15px;
+    width: 35px;
+    height: 35px;
+    }
+}
+
+@media only screen and (max-width: 575px) { 
+    a.dropdown-toggle::after {
+      position: absolute;
+  top: 15px;
+  right: -13px;
+
+}
+}
+
+
+
+div.blah{
+  bottom: 70%;
+  width: 40%;
+  left: 30%;
+  background-color: unset;
+  z-index: 5;
+}
+
+@media only screen and (max-width: 529px) { 
+    div.blah {
+    bottom: 30%;
+  width: 40%;
+  left: 25%;
+  z-index: 5;
+  }
+}
+
+@media only screen and (min-width: 530px) and (max-width: 800px) { 
+    div.blah {
+    bottom: 50%;
+  width: 40%;
+  left: 30%;
+  z-index: 5;
   }
 }
 
